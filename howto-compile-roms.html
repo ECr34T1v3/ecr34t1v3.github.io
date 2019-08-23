@@ -1,0 +1,362 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<!-- Titulo do Site -->
+	<title>How to compile ROMs | Erik Garcia</title>
+	
+	<!-- Redireciona se o navegador for o Internet Explorer 8 ou inferior (urgh!) -->
+		<!--[if lt IE 9]>
+		<script type="text/javascript">
+			window.location = "index_ie8.html";
+		</script>
+	<![endif]-->
+
+	<!-- Formatação -->
+	<meta charset="utf-8"/>
+
+	<!-- Adiciona o viewport para ajudar na resposividade -->
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	<!-- ??? -->
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+	<!-- Reset most of CSS definitions -->
+	<link rel="stylesheet" href="css/reset.css">
+	
+	<!-- Fonte Roboto -->
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:regular,bold,italic,thin,light,bolditalic,black,medium&amp;lang=en">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+	
+	<link rel="stylesheet" href="css/icomoon.css">
+	<link rel="stylesheet" href="css/button.css">
+	<link rel="stylesheet" href="css/cores.css">
+	<link rel="stylesheet" href="css/social.css">
+	<link rel="stylesheet" href="css/tables.css">
+	
+	<link rel="stylesheet" href="css/style.css">
+</head>
+<body class="m_white">
+	<!-- Inicio do Cabeçalho -->
+	<header id="header" class="sombra m_white">
+		<!-- Primeiro bloco container -->
+		<div class="container">
+			<a href="home.html" class="m_white sombra nav_item nav_item_black nav_active_black">Home</a>
+			<a href="downloads_rolex.html" class="m_white sombra nav_item nav_item_black">Redmi 4A (rolex)</a>
+			<a href="downloads_vince.html" class="m_white sombra nav_item nav_item_black">Redmi 5 Plus (vince)</a>
+			<a href="downloads_peregrine.html" class="m_white sombra nav_item nav_item_black">Moto G 4G (peregrine)</a>
+			<a href="downloads_z3c.html" class="m_white sombra nav_item nav_item_black">Xperia Z3 Compact (z3c)</a>
+			<a href="howto-compile-roms.html" class="m_white sombra nav_item nav_item_black">How to compile ROMs</a>
+			<a href="openzone.html" class="m_white sombra nav_item nav_item_black">OpenZone SSH</a>
+			<a href="contributors.html" class="m_white sombra nav_item nav_item_black">Contributors</a>
+		</div>
+	</header>
+	<!-- Fim do Cabeçalho -->
+
+	<!-- Inicio do Corpo Principal -->
+	<div id="corpo_principal" class="m_white">
+
+		<!-- Bloco tipo post -->
+		<div class="sombra bloco_textos">
+		
+			<p class="m_black sombra titulo_textos">Original Autor Notes - SaurabhCR7@XDA</p>
+			<div class="sombra bloco_textos">
+				<center>
+				<br />
+				<p>
+					<br />
+					"I am writing this tutorial together in an attempt to help
+					beginners which are trying to build a ROM from source for the
+					first time.I faced many problems when I started building roms,
+					so I thought it will be better to help someone who is trying the
+					same thing. I have tried to make this guide easy to understand.<br />
+					Please feel free to PM if you have any doubts!<br />
+					And if you built a rom by following this guide then please press
+					the thanks button, it will motivate me."<br />
+					<br />
+				</p>
+				</center>
+			</div>
+			
+			<p class="m_black sombra titulo_textos">Who is this guide for?</p>
+			<div class="sombra bloco_textos">
+				<center>
+				<br />
+				<p>
+					<br />
+					1. Who do not have a PC which meets required requiements for building a rom<br />
+					2. Who cannot download the sources which might be upto 10GB<br />
+					3. Who is building a rom for the first time<br />
+					<br />
+				</p>
+				</center>
+			</div>
+			
+			<p class="m_black sombra titulo_textos">Pre-Requisites</p>
+			<div class="sombra bloco_textos">
+				<center>
+				<br />
+				<p>
+					<br />
+					1. Android Phone<br />
+					2. A decent internet connection<br />
+					3. A debit/credit card<br />
+					4. Brain<br />
+					<br />
+				</p>
+				</center>
+			</div>
+			
+			<p class="m_black sombra titulo_textos">Contents</p>
+			<div class="sombra bloco_textos">
+				<center>
+				<br />
+				<p>
+					<br />
+					1. Making a Google Cloud Account<br />
+					2. Setting up the VM (Virtual Machine) on your phone<br />
+					3. Setting up the build environment<br />
+					4. Initializing and syncing the repo<br />
+					5. Cloning the device,kernel and vendor tree<br />
+					6. Building the rom<br />
+					7. Uploading the ROM in Google Drive<br />
+					<br />
+				</p>
+				</center>
+			</div>
+			
+			<p class="m_black sombra titulo_textos">1. Making A Google Cloud Account</p>
+			<div class="sombra bloco_textos">
+				<center>
+				<br />
+				<p>
+					<br />
+					NOTE: You will need a credit/debit card for making an account
+					and it is free to use Google Cloud for one year only.<br />
+					<br />
+					STEP 1: Open Google Cloud from here.<br />
+					STEP 2: Click on Free Trial.<br />
+					STEP 3: Login with your Google account username and password.<br />
+					<br />
+				</p>
+				</center>
+			</div>
+			
+			<p class="m_black sombra titulo_textos">2. Setting up the VM (Virtual Machine) on your phone</p>
+			<div class="sombra bloco_textos">
+				<center>
+				<br />
+				<p>
+					<br />
+					STEP 1: Download Juice SSH app from here.<br />
+					STEP 2: Open Juice SSH app and click on "Connections".<br />
+					STEP 3: Navigate to "Identities" and create a new identity by
+					pressing the "+" button.<br />
+					STEP 4: Input the "Nickname", "Username" (You can enter your
+					name also in both places) and then click on "Private Key"
+					(Set *Optional* button).
+					Navigate to "Generate" and press OK	and click on the tick icon.<br />
+					STEP 5: Now long press the identity you just created and
+					click on "Export Public Key" and click on *ES Note Editor* or
+					*Keep* (You need any one of them) and replace the "JuiceSSH"
+					written at the end with your username you entered in the
+					identity and now copy the whole text.<br />
+					STEP 6: Open Google Cloud and navigate to Computer Engine ->
+					Metadata -> SSH Keys.
+					Click on edit and then add item.
+					Paste the text you just copied and save it.<br />
+					STEP 7: Navigate to Computer Engine -> VM Instances.
+					Click on "Create Instance".
+					Enter the name(Any name).
+					Select Machine Type as "4vCPU".
+					Select Boot Disk as "Ubuntu 16.04 LTS" and set the size to 1000GB.
+					Tick both "Allow HTTP traffic" and "Allow HTTPS traffic" and click on create.<br />
+					STEP 8: Now it will take a minute.After it is created copy the External IP.<br />
+					STEP 9: Now open Juice SSH app and navigate to "Connections"
+					and create a connection by clicking on the "+" icon.
+					Input the nickcname you entered while creating the identity.
+					Paste the External IP in the "Address" column and click on the
+					tick icon.<br />
+					STEP 10: Now click on the connection you just created.
+					This will open the terminal on which you need to work.<br />
+					<br />
+				</p>
+				</center>
+			</div>
+			
+			<p class="m_black sombra titulo_textos">3. Setting up the build environment</p>
+			<div class="sombra bloco_textos">
+				<center>
+				<br />
+				<p>
+					<br />
+					NOTE:You just need to copy and paste the below codes one by one.
+					<br />
+					1. sudo apt update<br />
+					2. sudo apt upgrade<br />
+					3. sudo apt-get install git-core<br />
+					4. git clone https://github.com/akhilnarang/scripts<br />
+					5. cd scripts<br />
+					6. bash setup/ubuntu1604linuxmint18.sh<br />
+					7. mkdir -p ~/bin<br />
+					8. mkdir -p ~/android/lineage (Replace lineage with your rom
+					name or you can also use lineage for any rom for easy to understand))<br />
+					9. curl https://storage.googleapis.com/git-repo-downloads/repo > ~/bin/repo<br />
+					10. chmod a+x ~/bin/repo<br />
+					11. cd ~/android/lineage<br />
+					<br />
+				</p>
+				</center>
+			</div>
+			
+			<p class="m_black sombra titulo_textos">4. Initializing and syncing the repo</p>
+			<div class="sombra bloco_textos">
+				<center>
+				<br />
+				<p>
+					<br />
+					I. repo init -u https://github.com/LineageOS/android.git -b cm-14.1<br />
+					<br />
+					NOTE:Here I am compiling lineage os 14.1 therefore I am using it's repo initializing command.<br />
+					You can find repo initialization command for your rom by the following method:<br />
+					(i) Google search "rom_name github" (Replace rom_name with your rom name)<br />
+					(ii) Open the rom github in dextop mode.(Use Google Chrome)<br />
+					(iii)Click on the "manifest" or "android_manifest"<br />
+					(iv) Select the branch which you want to build and copy the repo initialization command given at bottom.<br />
+					<br />
+					Some repo initialization commands:<br />
+					(i). repo init -u https://github.com/ResurrectionRemix...m_manifest.git -b nougat<br />
+					(ii). repo init -u https://github.com/AICP/platform_manifest.git -b n7.1<br />
+					(iii). repo init -u git://github.com/CandyRoms/candy.git -b c7.1.2<br />
+					(iv). repo init -u https://github.com/BlissRoms/platform_manifest.git -b n7.1<br />
+					<br />
+					II. repo sync -j8<br />
+					<br />
+					Go get a coffee till the source is syncinc. It will take time depending on your internet speed.<br />
+					<br />
+				</p>
+				</center>
+			</div>
+			
+			<p class="m_black sombra titulo_textos">5. Cloning the device,kernel and vendor tree</p>
+			<div class="sombra bloco_textos">
+				<center>
+				<br />
+				<p>
+					<br />
+					I. git clone device_tree_link_here -b branch_name_here device/manufacturer_name_here/device_name_here<br />
+					Eg: git clone https://github.com/LineageOS/android...iaomi_mido.git -b cm-14.1 device/xiaomi/mido<br />
+					II. git clone kernel_tree_link_here -b branch_name_here kernel/manufacturer_name_here/chipset_name_here<br />
+					Eg: git clone https://github.com/LineageOS/android...mi_msm8953.git -b cm-14.1 kernel/xiaomi/msm8953<br />
+					III. git clone vendor_tree_link_here vendor/manufacturer_name_here<br />
+					Eg: git clone https://github.com/TheMuppets/propri...dor_xiaomi.git vendor/xiaomi<br />
+					<br />
+					NOTE:1. To find device tree link follow the following steps:<br />
+					(i)Google search "Device_name device tree github"<br />
+					(ii)Select the branch and copy the device tree link.<br />
+					<br />
+					II.To find the kernel tree link follow the below steps:<br />
+					(i)Google search "lineage os github".<br />
+					(ii)Input your chipset name in the search box and select the repository for your device.<br />
+					(iii)Copy the link.<br />
+					<br />
+					III.To find the vendor tree link follow the below steps:<br />
+					(i)Google search "The Muppets Github".<br />
+					(ii)Find the repository for your device and copy the link.<br />
+					<br />
+					If you can't find any tree with the above methods, then
+					simply google search that tree for your device!!!!<br />
+					<br />
+				</p>
+				</center>
+			</div>
+			
+			<p class="m_black sombra titulo_textos">6. Building the rom</p>
+			<div class="sombra bloco_textos">
+				<center>
+				<br />
+				<p>
+					<br />
+					1. export USE_CCACHE=1<br />
+					2. prebuilts/misc/linux-x86/ccache/ccache -M 50G<br />
+					3. export CCACHE_COMPRESS=1<br />
+					4. . build/envsetup.sh<br />
+					5. brunch device_name_here<br />
+					or<br />
+					5. make bacon -j8<br />
+					<br />
+					Now it will take approx 7-8 hrs or more depending upon your
+					internet speed.Go get a sleep till then.<br />
+					<br />
+				</p>
+				</center>
+			</div>
+			
+			<p class="m_black sombra titulo_textos">7. Uploading the ROM in Google Drive</p>
+			<div class="sombra bloco_textos">
+				<center>
+				<br />
+				<p>
+					<br />
+					1. cd ~<br />
+					2. wget https://docs.google.com/uc?id=0B3X9GlR6EmbnWksyTEtCM0VfaFE&export=download<br />
+					3. mv uc\?id\=0B3X9GlR6EmbnWksyTEtCM0VfaFE gdrive<br />
+					4. chmod +x gdrive<br />
+					5. sudo install gdrive /usr/local/bin/gdrive<br />
+					6. gdrive list<br />
+					7. cd out/target/product<br />
+					8. ls<br />
+					Check your ROM name.<br />
+					9. gdrive upload same_rom_name_here<br />
+					Now it will show a link. Click on it and copy the code and
+					paste it in the terminal.<br />
+					Now your rom will start uploading in your Google Drive.<br />
+					<br />
+				</p>
+				</center>
+			</div>
+			
+			<p class="m_black sombra titulo_textos">
+				<br />
+				Congratulations You Built Your First ROM!!<br />
+				<br />
+			</p>
+			
+			<p class="m_black sombra titulo_textos">Credits</p>
+			<div class="sombra bloco_textos">
+				<center>
+				<br />
+				<p>
+					<br />
+					SaurabhCR7<br />
+					@nitin.chobhe (For his images and guide for google cloud)<br />
+					Akhil Narang(For his Scripts)<br />
+					Google<br />
+					XDA<br />
+
+				</p>
+				</center>
+			</div>
+		</div>
+		
+		<!-- Bloco tipo post -->
+		<div class="sombra bloco_textos">
+			<ul class="social">
+				<br />
+				<li><a href="https://github.com/ECr34T1v3" target="_blank"><i class="icon-github"></i></a></li>
+				<li><a href="https://twitter.com/ecr34t1v3" target="_blank"><i class="icon-twitter"></i></a></li>
+				<li><a href="https://www.instagram.com/ECr34T1v3" target="_blank"><i class="icon-instagram"></i></a></li>
+				<li><a href="https://www.facebook.com/TioECr34T1v3" target="_blank"><i class="icon-facebook"></i></a></li>
+				<li><a href="https://forum.xda-developers.com/member.php?u=6364365" target="_blank">XDA</a></li><br>
+				<br />
+				<p>&copy; 2019 ECr34T1v3</p>
+			</ul>
+		</div>
+
+	</div>
+	<!-- Fim do Corpo Principal -->
+
+</body>
+</html>
+
+<!-- Comentarios -->
+<!-- Caio Oliveira: Dont use px, learn how to use rem -->

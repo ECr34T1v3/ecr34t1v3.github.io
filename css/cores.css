@@ -1,0 +1,45 @@
+/* cores.css: Cores principais - Baseadas Nas Cores do Google (Material Colors) */
+.m_black {
+	background-color: black;
+	color: white;
+}
+.m_white {
+	background-color: #FFFFFF;
+	color: black;
+}
+.m_red {
+	background-color: #F44336;
+	color: white; /* O certo é fonte preta, mas branco fica melhor */
+}
+.m_red_darken1 {
+	background-color: #E53935;
+	color: white;
+}
+.m_green {
+	background-color: #4CAF50;
+	color: white;
+}
+.m_green_light {
+	background-color: #43A047;
+	color: white;
+}
+.m_blue {
+	background-color: #2196F3;
+	color: white;
+}
+.m_blue_light {
+	background-color: #1E88E5;
+	color: white;
+}
+.m_blue_grey_dark {
+	background-color: #455A64;
+	color: white;
+}
+.m_blue_grey_light {
+	background-color: #607D8B;
+	color: white;
+}
+.m_grey_dark {
+	background-color: #616161;
+	color: white;
+}

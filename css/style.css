@@ -1,0 +1,281 @@
+/* Cerquilhas são para id(s) */
+/* Pontos são para class(es) */
+
+/* Notas:
+Caio Oliveira:
+	Ao usar "width: 100%" não use "padding" pois ele adiciona espaço nas laterais,
+	use "padding-bottom" e "padding-top"
+*/
+
+/* --- geral.css: Regras Gerais */
+html {
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+body {
+	/* Padrão Roboto */
+	font-family: 'Roboto';
+
+	/* Ajuste geral para todos os navegadores */
+	width: 100%;
+	height: 100%;
+}
+h1 {
+  font-size: 270%;
+}
+p, a {
+  font-size: 120%;
+}
+
+/* --- ids_principais.css: Regras para seções*/
+#header, #corpo_principal {
+	/* Pular espaço */
+	margin-bottom: 1rem;
+}
+#header, #corpo_principal, #footer {
+	/* Tratar como blocos */
+	display: block;
+
+	/* Manter conteudo desenconstado */
+	padding: 1rem;
+
+	/* Alinhe o texto no centro*/
+	text-align: center;
+}
+#corpo_principal {
+	/* Centralizar o bloco*/
+    margin-left: auto;
+    margin-right: auto;
+}
+#map {
+	height: 400px;
+	width: 100%;
+	background-color: grey;
+}
+
+/* bordas.css: Bordas */
+.sombra {
+	/* Mostra como bloco */
+	display: block;
+
+	/* Centralizar o conteudo */
+    margin-left: auto;
+    margin-right: auto;
+
+	/* Sombra por borda */
+	/*
+	border: 0.1875rem solid;
+	border-color: rgba(0,0,0,0.23);
+	*/
+
+	/* Sombra por box-shadow */
+	-webkit-box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+	box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+}
+
+/* links.css: Cores dos Links */
+a:link, a:visited {
+	/* Remover aparencia de links */
+	text-decoration: none;
+	/* Deixar a cor azul */
+	color: black;
+}
+
+/* header.css: Itens do Cabeçalho */
+.imagem_cabecalho {
+	height: auto;
+	width: 100%;
+	min-width: 0;
+	min-height: 0;
+	vertical-align: middle;
+}
+.imagem_container {
+	-webkit-box-flex: 20%;
+	-ms-flex: 20%;
+	flex: 20%;
+	text-indent: 0;
+}
+.bloco_cabecalho {
+	-webkit-box-flex: 80%;
+	-ms-flex: 80%;
+	flex: 80%;
+	text-align: center;
+}
+.nav_item {
+	/* Remover aparencia de links */
+	text-decoration: none;
+
+	/* Adicionar tamanho aos botões */
+	padding: 1rem;
+	margin-bottom: 0.25rem;
+
+	/* Remover bordas */
+	border: none;
+
+	/* Botoes flexiveis */
+	-webkit-box-flex: 1;
+	-ms-flex-positive: 1;
+	flex-grow: 1;
+}
+.nav_item_blue:hover {
+	/* Cor do botão ao passar por cima */
+	background-color: #2196F3;
+}
+.nav_item_red:hover {
+	/* Cor do botão ao passar por cima */
+	background-color: #E53935;
+}
+.nav_item_black:hover {
+	/* Cor do botão ao passar por cima */
+	background-color: black;
+}
+.nav_item:hover {
+	/* Cor da fonte do botão ao passar por cima */
+	color: white;
+}
+
+.nav_active_blue, .nav_active_red, .nav_active_black {
+	/* Cor da fonte do botão quando ativado (e priorize ele)*/
+	color: white !important;
+
+	/* Desabilitar o link e torna-lo apenas um item */
+	pointer-events: none;
+
+	/* Mostrar o cursor padrão */
+	cursor: pointer;
+}
+.nav_active_blue {
+	/* Cor do botão ao passar por cima */
+	background-color: #2196F3;
+}
+.nav_active_red {
+	/* Cor do botão ao passar por cima */
+	background-color: #E53935;
+}
+.nav_active_black {
+	/* Cor do botão ao passar por cima */
+	background-color: black;
+}
+
+/* corpo.css: Itens do Corpo */
+.imagem_principal {
+	height: auto;
+	width: 45%;
+	margin: 0.25rem;
+	/* Botoes flexiveis */
+	-webkit-box-flex: 1;
+	-ms-flex-positive: 1;
+	flex-grow: 1;
+}
+.titulo_textos {
+	padding-top: 0.25rem;
+	padding-bottom: 0.5rem;
+	margin-top: 0.5rem;
+	margin-bottom: 0.5rem;
+	text-align: center;
+	text-indent: 0;
+}
+.bloco_textos {
+	padding-left: 1.5rem;
+	padding-right: 1.5rem;
+	padding-bottom: 1rem;
+	margin-bottom: 1rem;
+	text-align: justify;
+	text-indent: 1.5rem;
+}
+
+/* outros.css: Remover margem dos paragrafos */
+.container {
+	/* Container em modo flex */
+	display: -webkit-box;
+	display: -moz-box;
+	display: -ms-flexbox;
+	display: -webkit-flex;
+	display: flex;
+
+	-webkit-box-align: center;
+	-ms-flex-align: center;
+	align-items: center;
+
+	-webkit-box-orient: horizontal;
+	-webkit-box-direction: normal;
+
+	-ms-flex-direction: row;
+	flex-direction: row;
+
+	-ms-flex-wrap: wrap;
+	flex-wrap: wrap;
+}
+hr {
+	width: auto;
+	border-style: solid;
+	background-color: black;
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
+}
+p {
+	margin-bottom: 0.3rem;
+}
+.imagem_redes_sociais {
+	height: 30px;
+	width: auto;
+}
+.botao_redes_sociais:hover {
+	color: grey;
+}
+.imagem_home {
+	border-radius: 50%;
+	overflow: hidden;
+	width: 300px
+}
+/*
+.galeria {
+	margin: 40px auto;
+	overflow: hidden;
+}
+
+.foto {
+	height: auto;
+	width: 50%;
+	opacity: 0;
+	animation-name: animacao;
+	animation-duration: 5s;
+	animation-iteration-count: infinite;	  
+}
+
+
+@keyframes animacao {
+	25% {
+		opacity: 1;
+		transform: scale (1.1,1.1);
+	}
+	50% {
+		opacity: 0;
+	}
+}
+*/
+
+@media screen and (max-width: 600px) {
+	.imagem_redes_sociais {
+		height: 25px;
+		width: auto;
+	}
+	h1 {
+	  font-size: 170%;
+	}
+	p, a {
+	  font-size: 90%;
+	}
+}
+@media screen and (max-width: 400px) {
+	.imagem_redes_sociais {
+		height: 15px;
+		width: auto;
+	}
+	h1 {
+	  font-size: 140%;
+	}
+	p, a {
+	  font-size: 60%;
+	}
+}
