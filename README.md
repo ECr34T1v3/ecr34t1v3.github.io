@@ -8,4 +8,3 @@
 * https://github.com/TheStrechh
 
 * https://freehtml5.co for Parts of CSS
-# ecr34t1v3.github.io
