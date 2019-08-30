@@ -191,18 +191,19 @@
 					<br />
 					NOTE:You just need to copy and paste the below codes one by one.
 					<br />
-					1. sudo apt update<br />
-					2. sudo apt upgrade<br />
-					3. sudo apt-get install git-core<br />
-					4. git clone https://github.com/akhilnarang/scripts<br />
-					5. cd scripts<br />
-					6. bash setup/ubuntu1604linuxmint18.sh<br />
-					7. mkdir -p ~/bin<br />
-					8. mkdir -p ~/android/lineage (Replace lineage with your rom
-					name or you can also use lineage for any rom for easy to understand))<br />
-					9. curl https://storage.googleapis.com/git-repo-downloads/repo > ~/bin/repo<br />
-					10. chmod a+x ~/bin/repo<br />
-					11. cd ~/android/lineage<br />
+					1. sudo apt-get update<br />
+					2. git clone https://github.com/ECr34T1v3/scripts-1e<br />
+					3. sudo sh scripts-1/setup/ubuntu1604linuxmint18.sh<br />
+					4. mkdir ~/bin<br />
+					5. PATH=~/bin:$PATH<br />
+					6. cd ~/bin<br />
+					7. curl http://commondatastorage.googleapis.com/git-repo-downloads/repo > ~/bin/repo<br />
+					8. chmod a+x ~/bin/repo<br />
+					9. cd<br />
+					10. sudo apt-get install libssl-dev<br />
+					After running these commands, create a GitHub account, and apply these commands:<br />
+					git config --global user.name "put the username of your github here"<br />
+					git config --global user.email "put the email of your github here"<br />
 					<br />
 				</p>
 				</center>
